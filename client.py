@@ -16,7 +16,7 @@ class Client:
   connDepVendas = rpyc.connect(DepVendas[0], DepVendas[1])
   
   print(f"Fazendo busca no servidor de diretórios DerpartamentoVendas do servidor CalcServer")
-  depVendasCalcServer  =  connDepVendas.root.exposed_lookup('CalcServer')
+  depVendasCalcServer  =  connDepVendas.root.exposed_lookup(SERVER_CALCSERVER_NAME)
 
   print(f"Conectando ao CalcServer do servirdor de diretórios DerpartamentoVendas com ip:{depVendasCalcServer[0]} e porta:{depVendasCalcServer[1]}")
   CalcServerDepVendas  =  rpyc.connect(depVendasCalcServer[0], depVendasCalcServer[1])
@@ -27,7 +27,7 @@ class Client:
   print(f"dividindo valore do CalcServer do servirdor de diretórios DerpartamentoVendas, valor A: 10 valor B: 1000 Resultado: {CalcServerDepVendas.root.exposed_div(10,100)} ")
   
   print(f"Fazendo busca no servidor de diretórios DerpartamentoVendas do servidor ValueServer")  
-  depVendasValueServer  =  connDepVendas.root.exposed_lookup('ValueServer')
+  depVendasValueServer  =  connDepVendas.root.exposed_lookup(SERVER_VALUESERVER_NAME)
 
   print(f"Conectando ao ValueServer do servirdor de diretórios DerpartamentoVendas com ip:{depVendasValueServer[0]} e porta:{depVendasValueServer[1]}")
   ValueServerDepVendas  =  rpyc.connect(depVendasValueServer[0], depVendasValueServer[1])
@@ -40,7 +40,7 @@ class Client:
   print(ValueServerDepVendas.root.exposed_value())
   
   print(f"Fazendo busca no servidor de diretórios DerpartamentoVendas do servidor HourServer")
-  depVendasHourServer  =  connDepVendas.root.exposed_lookup('HourServer')
+  depVendasHourServer  =  connDepVendas.root.exposed_lookup(SERVER_HOURSERVER_NAME)
   
   print(f"Conectando ao HourServer do servirdor de diretórios DerpartamentoVendas com ip:{depVendasHourServer[0]} e porta:{depVendasHourServer[1]}")
   HourServerDepVendas  =  rpyc.connect(depVendasHourServer[0], depVendasHourServer[1])
@@ -54,7 +54,7 @@ class Client:
   connDepRH = rpyc.connect(DepRH[0], DepRH[1])
 
   print(f"Fazendo busca no servidor de diretórios DepartamentoRH do servidor CalcServer")
-  depRhCalcServer  =  connDepRH.root.exposed_lookup('CalcServer')
+  depRhCalcServer  =  connDepRH.root.exposed_lookup(SERVER_CALCSERVER_NAME)
 
   print(f"Conectando ao CalcServer do servirdor de diretórios DepartamentoRH com ip:{depRhCalcServer[0]} e porta:{depRhCalcServer[1]}")
   CalcServerDepRh  =  rpyc.connect(depRhCalcServer[0], depRhCalcServer[1])
@@ -78,7 +78,7 @@ class Client:
   print(ValueServerDepRh.root.exposed_value())
     
   print(f"Fazendo busca no servidor de diretórios DepartamentoRH do servidor HourServer")
-  depRhHourServer  =  connDepRH.root.exposed_lookup('HourServer')
+  depRhHourServer  =  connDepRH.root.exposed_lookup(SERVER_HOURSERVER_NAME)
   
   print(f"Conectando ao HourServer do servirdor de diretórios DepartamentoRH com ip:{depRhHourServer[0]} e porta:{depRhHourServer[1]}")
   HourServerDepRh  =  rpyc.connect(depRhHourServer[0], depRhHourServer[1])

@@ -24,9 +24,9 @@ if __name__ == "__main__":
   print(f"Obtendo ipadress da HourServer")  
   ipAdress = socket.gethostbyname(socket.gethostname())
   print(f"Registrando no Server de diretório DerpartamentoVendas") 
-  conn_serverDepVenda.root.exposed_register('HourServer',ipAdress,PORT_HOURSERVER)
+  conn_serverDepVenda.root.exposed_register(SERVER_HOURSERVER_NAME, ipAdress,PORT_HOURSERVER)
   print(f"Registrando no Server de diretório DepartamentoRH") 
-  conn_serverDepRH.root.exposed_register('HourServer',ipAdress,PORT_HOURSERVER)
+  conn_serverDepRH.root.exposed_register(SERVER_HOURSERVER_NAME, ipAdress,PORT_HOURSERVER)
 
   server.start()
 

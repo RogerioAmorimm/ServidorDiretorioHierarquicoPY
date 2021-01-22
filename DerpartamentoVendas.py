@@ -72,5 +72,5 @@ if __name__ == "__main__":
     print(f"Obtendo ipadress do servidor de diretórios DerpartamentoVendas")  
     ipAdress = socket.gethostbyname(socket.gethostname())
     print(f"Registrando no Server de diretório DerpartamentoVendas no Server de diretório Raiz") 
-    conn_serverDirRaiz.root.exposed_register('DerpartamentoVendas',ipAdress,PORT_DEPVENDA)
+    conn_serverDirRaiz.root.exposed_register(SERVER_DEPVENDA_NAME,ipAdress,PORT_DEPVENDA)
     serverDirA.start()

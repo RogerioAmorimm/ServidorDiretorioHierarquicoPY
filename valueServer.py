@@ -36,6 +36,6 @@ if __name__ == "__main__":
   print(f"Obtendo ipadress da ValueServer")  
   ipAdress = socket.gethostbyname(socket.gethostname())
   print(f"Registrando no Server de diretório DerpartamentoVendas") 
-  conn_serverDepVenda.root.exposed_register('ValueServer',ipAdress,PORT_VALUESERVER)
+  conn_serverDepVenda.root.exposed_register(SERVER_VALUESERVER_NAME,ipAdress,PORT_VALUESERVER)
   server.start()
 
